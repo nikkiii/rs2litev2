@@ -217,8 +217,11 @@ public class RS2Lite {
 		loaderFuture = clientService.submit(new Callable<Applet>() {
 			@Override
 			public Applet call() throws Exception {
-				//I think there are 169 worlds...
+				//I think there are 169 worlds, oh wel
 				int world = new Random().nextInt(169);
+				//Oops!
+				if(world == 0)
+					world = 1;
 				WebAppletLoader loader = new WebAppletLoader(
 						"http://world"+world+".runescape.com/,j0");
 				loader.load();
